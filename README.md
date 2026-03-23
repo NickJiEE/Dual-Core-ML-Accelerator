@@ -259,5 +259,5 @@ figures/
 
 ## Acknowledgements
 
-Course: ECE 260B, UC San Diego — VLSI Integrated Circuits and Systems Design (Winter 2026)  
+Course: ECE 260B, UC San Diego — VLSI Integrated Circuits and Systems Design (Winter 2026, Professor Mingu Kang)  
 Instructor and course staff provided the baseline RTL template and TSMC 65nm PDK access.
