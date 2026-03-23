@@ -42,22 +42,25 @@ Results are stored in a partial sum memory (PMEM) and then normalized row-by-row
 
 ### Single Core Architecture
 
-> 📷 **Figure placeholder**: `figures/core_architecture.png`  
-> *(Slide 6 — the mac_array / mac_col / kmem / ofifo / pmem block diagram)*
+<p align="center">
+  <img src="figures/core_architecture.png" alt="Single Core Architecture" width="500"/>
+</p>
 
 The core is organized as an 8×8 2D systolic array. K vectors are preloaded into each `mac_col`'s local registers. Q vectors then stream west-to-east through the array each cycle, and each MAC cell accumulates a partial dot product. The SFU at the bottom of each column drains completed partial sums into `ofifo`, which then writes to `pmem`.
 
 ### Systolic Dataflow
 
-> 📷 **Figure placeholder**: `figures/systolic_computation_wave.png`  
-> *(Slides 7–10 — the wave propagation showing K1\*Q1 → K1\*Q2/K2\*Q1 → ... → K8\*Q8)*
+<p align="center">
+  <img src="figures/systolic_computation_wave.png" alt="Systolic Dataflow" width="500"/>
+</p>
 
 Each cycle, a new Q vector enters from the left while the previous Q vectors continue propagating rightward. This creates a diagonal wave of active multiply-accumulate operations across the array, achieving near-100% utilization once the pipeline is full.
 
 ### Dual Core Architecture
 
-> 📷 **Figure placeholder**: `figures/dual_core_cdc.png`  
-> *(Slide 15 — the two-core diagram showing CLK_core0 / CLK_core1 and sum_q[1–8] / sum_q[9–16] exchange)*
+<p align="center">
+  <img src="figures/dual_core_cdc.png" alt="Dual Core Architecture" width="1000"/>
+</p>
 
 ```
          ┌────────────┐       ┌────────────┐
