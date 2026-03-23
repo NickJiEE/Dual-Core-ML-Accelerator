@@ -106,8 +106,9 @@ The two cores operate on **independent clock domains**. A CDC bridge (`async_sum
 
 ## Step 2 — Output Normalization
 
-> 📷 **Figure placeholder**: `figures/normalization_flow.png`  
-> *(Slide 14 — the pmem fetch → sfp → writeback loop diagram)*
+<p align="center">
+  <img src="figures/normalization_flow.png" alt="Output Normalization Flow" width="750"/>
+</p>
 
 ### Algorithm
 After MAC operations complete, the OFIFO drains partial sums into PMEM. A normalizer then performs a sequential read-modify-write over each PMEM row:
