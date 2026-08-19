@@ -231,7 +231,7 @@ RESULT: ALL PASSED  (48/48 checks, 0 mismatches)
 | Tool | Purpose |
 |------|---------|
 | Synopsys Design Compiler | RTL synthesis, SDC constraint application |
-| Cadence Innovus | Floorplan, placement, CTS, routing, PnR |
+| Cadence Innovus | Floorplan, placement, CTS, routing |
 | Cadence Xcelium | Behavioral and gate-level simulation |
 | Cadence Innovus (VCD GUI) | Post-route power analysis with VCD activity annotation |
 | TSMC 65nm PDK | Standard cell library, SRAM macros |
